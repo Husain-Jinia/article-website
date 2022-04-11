@@ -22,11 +22,11 @@ class UserRegisterProxy(forms.Form):
     phone_number = forms.CharField(max_length=256, required=False)
     dob = forms.DateField()
     
-    password1 = forms.HiddenInput(max_length=256,required=True)
-    password2 = forms.HiddenInput(max_length=256,required=True)
+    password1 = forms.CharField(max_length=256,required=True)
+    password2 = forms.CharField(max_length=256,required=True)
     first_name = forms.CharField(max_length=256,required=True)
     last_name = forms.CharField(max_length=256,required=True)
-    username = forms.CharField(max_length=256,unique=True,required=True)
+    username = forms.CharField(max_length=256,required=True)
     category = forms.MultipleChoiceField(choices=CHOICES)
 
     def save(self):
